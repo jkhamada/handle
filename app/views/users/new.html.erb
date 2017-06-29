@@ -1,0 +1,15 @@
+<fieldset>
+	<legend>Login</legend>
+	<form action="/users" method="post">
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		
+		<p>Email: <input type="text" name="user[email]" id="Email"></p>
+		<p>Handle: <input type="text" name="user[handle]" id="handle" placeholder="(minimum 7 characters)"></p>
+		<p>Name: <input type="text" name="user[name]" id="name"></p>
+		<p>Password: <input type="password" name="user[password]" id="Password"></p>
+		<p>Password Confirmation: <input type="password" name="user[password_confirmation"></p>
+
+		<p><a href="/sessions/new">Already a member? </a><input type="submit" name="Register" value="Register"></p>
+
+	</form>
+</fieldset>

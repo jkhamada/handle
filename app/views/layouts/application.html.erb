@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Handle</title>
+    <title><%= yield :title %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,26 @@
   </head>
 
   <body>
+
+<!-- CHANGE MIGHT REQUIRE -->
+<!-- Flash message -->
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |e| %>
+        <p style="color: red;"><%= e %></p>
+      <% end %>
+    <% end %>
+
+<!-- Logout -->
+    <% if current_user %>
+      <form action="/sessions/<%= current_user.id %>" method="POST">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="hidden" name="_method" value="delete">
+
+        <input type="submit" value="Log Out" align="right">
+      </form>
+    <% end %>
+
+
     <%= yield %>
   </body>
 </html>
