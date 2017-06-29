@@ -1,0 +1,2 @@
+class AliassController < ApplicationController
+end

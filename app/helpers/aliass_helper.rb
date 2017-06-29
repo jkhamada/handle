@@ -1,0 +1,2 @@
+module AliassHelper
+end
