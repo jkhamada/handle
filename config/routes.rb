@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # get 'users/show'
   #
   # get 'users/edit'
-  root users 'users#index'
+  root 'users#index'
   resources :users
   resources :sessions
   resources :aliass
