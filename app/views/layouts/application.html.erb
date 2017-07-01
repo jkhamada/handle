@@ -6,6 +6,14 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript">
+    <%= yield :some_javascript %>
+    </script>
+    <!-- /*<style media="screen">
+    <%= yield :some_css %>
+
+    </style>*/ -->
+
   </head>
 
   <body>
