@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 	# skip_before_action :require_login, only: [:new, :create]
 	def new
-		
+
 	end
 
 	def create
@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 
 	  	if @user && @user.authenticate(params[:password])
 	  		session[:user_id] = @user.id
-	  		redirect_to "/dashboards/#{@user.id}"
+	  		redirect_to "/dashboards"
 	  	else
 	  		flash[:errors]=["Please enter correct Eamil and passwords"]
 	  		redirect_to "/sessions/new"
